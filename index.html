@@ -1032,7 +1032,7 @@
                             <span class="item-category">Music</span>
                             <h4 class="item-title">Relaxing BGM Demo</h4>
                             <p style="font-size:0.9rem; color:var(--text-secondary);">
-                                冷媒ガス会社HPのBGM。<br>
+                                冷媒ガスの会社のHPのBGM。<br>
                                 曲が目立ちすぎることなく、画像と社風に合うよう作成。
                             </p>
                         </div>
@@ -1164,22 +1164,29 @@
                         </p>
                     </div>
 
-                    <form class="contact-form">
+                    <!-- 
+                        【重要】フォーム設定 
+                        FormspreeのIDを取得して、action="..." のURLを書き換えてください。
+                        1. https://formspree.io/ にアクセスして登録
+                        2. 新しいフォームを作成
+                        3. 発行されたURLを action="" の中に貼り付ける
+                    -->
+                    <form class="contact-form" action="https://formspree.io/f/https://formspree.io/f/xqedknjk" method="POST">
                         <div class="form-group">
                             <label class="form-label" for="name">お名前</label>
-                            <input type="text" id="name" class="form-input" placeholder="例：山田 太郎">
+                            <input type="text" id="name" name="name" class="form-input" placeholder="例：山田 太郎" required>
                         </div>
                         <div class="form-group">
                             <label class="form-label" for="email">メールアドレス</label>
-                            <input type="email" id="email" class="form-input" placeholder="example@gmail.com">
+                            <input type="email" id="email" name="email" class="form-input" placeholder="example@gmail.com" required>
                         </div>
                         <div class="form-group">
                             <label class="form-label" for="subject">件名</label>
-                            <input type="text" id="subject" class="form-input" placeholder="制作のご依頼について">
+                            <input type="text" id="subject" name="subject" class="form-input" placeholder="制作のご依頼について" required>
                         </div>
                         <div class="form-group">
                             <label class="form-label" for="message">お問合せ内容</label>
-                            <textarea id="message" class="form-textarea" placeholder="ご相談内容をご記入ください"></textarea>
+                            <textarea id="message" name="message" class="form-textarea" placeholder="ご相談内容をご記入ください" required></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary" style="width: 100%;">送信する</button>
                     </form>
