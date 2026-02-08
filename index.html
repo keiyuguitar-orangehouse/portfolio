@@ -1,0 +1,1301 @@
+<!DOCTYPE html>
+<html lang="ja" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO: Title & Description -->
+    <title>Orange House | AI画像・動画制作 & 初心者向けAI教室</title>
+    <meta name="description" content="AIを活用した画像・動画・BGM制作ならOrange House（オレンジハウス）。50代・初心者向けの『今さら聞けないAI教室』も開催中。個人・小規模店舗様のクリエイティブ制作を同世代の視点でサポートします。">
+    <meta name="keywords" content="AI画像制作,動画制作,BGM制作,AI教室,50代,初心者,Orange House,オレンジハウス">
+    <meta name="author" content="Orange House Keiyu">
+
+    <!-- SEO: OGP (SNS Sharing) -->
+    <meta property="og:title" content="Orange House | AI画像・動画制作 & AI教室">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://keiyuguitar-orangehouse.github.io/my-portfolio/"> <!-- 公開URLに変更 -->
+    <meta property="og:image" content="logo.jpg"> <!-- リネーム後のファイル名に変更 -->
+    <meta property="og:description" content="50代から始めるクリエイティブ＆AI活用術。制作代行からAI教室までサポートします。">
+    <meta property="og:site_name" content="Orange House">
+    <meta property="og:locale" content="ja_JP">
+
+    <!-- SEO: Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Orange House | AI Creative & Education">
+    <meta name="twitter:description" content="AIと感性で、想像を創造に。制作のご依頼やAI教室の詳細はこちら。">
+    <meta name="twitter:image" content="logo.jpg">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Zen+Kaku+Gothic+New:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        /* --- Variables & Reset --- */
+        :root {
+            /* Dark Mode (Dark Orange Theme) */
+            --bg-primary: #2D1B0E;
+            --bg-secondary: #4E2C17;
+            --text-primary: #FFF3E0;
+            --text-secondary: #D7CCC8;
+            --accent: #FF6D00;
+            --accent-glow: rgba(255, 109, 0, 0.3);
+            --border-color: #5D4037;
+            --card-bg: #3E2723;
+            --nav-bg: rgba(45, 27, 14, 0.9);
+            --transition-speed: 0.3s;
+        }
+
+        body.light-mode {
+            /* Light Mode (Yellow-Green Theme) */
+            --bg-primary: #F1F8E9;
+            --bg-secondary: #FFFFFF;
+            --text-primary: #33691E;
+            --text-secondary: #689F38;
+            --accent: #7CB342;
+            --accent-glow: rgba(124, 179, 66, 0.3);
+            --border-color: #DCEDC8;
+            --card-bg: #FFFFFF;
+            --nav-bg: rgba(255, 255, 255, 0.9);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Zen Kaku Gothic New', 'Noto Sans JP', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            transition: background-color var(--transition-speed), color var(--transition-speed);
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* --- Components --- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            border: 2px solid var(--accent);
+        }
+
+        .btn-primary {
+            background-color: var(--accent);
+            color: #121212;
+        }
+
+        .btn-primary:hover {
+            background-color: transparent;
+            color: var(--accent);
+            box-shadow: 0 0 15px var(--accent-glow);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--accent);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--accent);
+            color: #121212;
+            box-shadow: 0 0 15px var(--accent-glow);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        /* SEO friendly utility: Visually hidden but readable by screen readers/bots */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--accent);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+            font-size: 1rem;
+        }
+
+        /* --- Header --- */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: var(--nav-bg);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 15px 0;
+            transition: all 0.3s;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 5px;
+            border-radius: 50%;
+            transition: 0.3s;
+        }
+
+        .theme-toggle:hover {
+            background-color: rgba(255,255,255,0.1);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            cursor: pointer;
+        }
+
+        /* --- Hero Section --- */
+        #hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+            overflow: hidden;
+            padding-top: 60px; /* offset header */
+        }
+
+        /* Abstract Background shapes */
+        #hero::before {
+            content: '';
+            position: absolute;
+            top: -10%;
+            left: -10%;
+            width: 50vw;
+            height: 50vw;
+            background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+            opacity: 0.4;
+            pointer-events: none;
+        }
+
+        #hero::after {
+            content: '';
+            position: absolute;
+            bottom: -10%;
+            right: -10%;
+            width: 40vw;
+            height: 40vw;
+            background: radial-gradient(circle, rgba(120, 120, 120, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            z-index: 1;
+            max-width: 800px;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            letter-spacing: -0.05em;
+        }
+
+        .hero-title span {
+            color: var(--accent);
+            display: block;
+            font-size: 4rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+            line-height: 1.8;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        /* --- About Section --- */
+        #about {
+            background-color: var(--bg-secondary);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+            /* 画像コンテナのサイズを制限 */
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .about-image img {
+            /* 【修正】widthを100%にして親要素にフィットさせる */
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            filter: grayscale(20%);
+            transition: 0.5s;
+            object-fit: cover;
+        }
+
+        .about-image:hover img {
+            filter: grayscale(0%);
+            transform: scale(1.02);
+        }
+
+        .about-image::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 100%;
+            height: 100%;
+            border: 2px solid var(--accent);
+            border-radius: 20px;
+            z-index: 0;
+            transform: translate(10px, 10px);
+            transition: 0.3s;
+        }
+
+        .about-image:hover::before {
+            transform: translate(5px, 5px);
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--accent);
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            color: var(--text-secondary);
+        }
+
+        /* --- Skills Section --- */
+        .skills-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .skill-card {
+            background-color: var(--bg-secondary);
+            padding: 40px;
+            border-radius: 15px;
+            border: 1px solid var(--border-color);
+            transition: 0.3s;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 20px;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+            box-shadow: 0 10px 30px var(--accent-glow);
+        }
+
+        @media (min-width: 768px) {
+            .skill-card {
+                flex-direction: row;
+                align-items: center;
+                text-align: left;
+                gap: 40px;
+            }
+
+            .skill-info {
+                flex: 0 0 35%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                border-right: 1px solid var(--border-color);
+                padding-right: 40px;
+            }
+
+            .skill-list {
+                flex: 1;
+                margin-top: 0;
+            }
+        }
+
+        .skill-icon {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 15px;
+            color: var(--accent);
+        }
+
+        .skill-title {
+            font-size: 1.4rem;
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+
+        .skill-description {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 0;
+        }
+
+        .skill-list {
+            width: 100%;
+        }
+
+        .skill-list li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            text-align: left;
+        }
+
+        .skill-list li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        /* --- Portfolio Section (Masonry) --- */
+        #portfolio {
+            background-color: var(--bg-secondary);
+        }
+
+        .portfolio-filter {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            padding: 8px 20px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-size: 0.9rem;
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background-color: var(--accent);
+            color: #121212;
+            border-color: var(--accent);
+        }
+
+        .masonry-grid {
+            column-count: 2;
+            column-gap: 20px;
+        }
+        
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            height: 0;
+            overflow: hidden;
+            background: #000;
+        }
+        
+        .aspect-16-9 {
+            padding-bottom: 56.25%; 
+        }
+
+        .aspect-9-16 {
+            padding-bottom: 177.77%; 
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .portfolio-item {
+            break-inside: avoid;
+            margin-bottom: 20px;
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .item-content {
+            padding: 20px;
+        }
+
+        .item-category {
+            font-size: 0.8rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .item-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .dummy-img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+        }
+
+        .dummy-audio {
+            background-color: var(--bg-primary);
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        /* Art Grid for Portfolio Item 6 */
+        .art-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2px;
+            background-color: var(--card-bg);
+        }
+
+        .art-grid img {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .art-grid img:hover {
+            opacity: 0.8;
+        }
+
+        /* --- Price Section CSS --- */
+        .price-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .price-card {
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 15px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .price-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+            box-shadow: 0 10px 30px var(--accent-glow);
+        }
+
+        .price-icon {
+            color: var(--accent);
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .price-category {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            color: var(--text-primary);
+        }
+
+        .price-list {
+            text-align: left;
+            width: 100%;
+        }
+
+        .price-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 15px;
+            border-bottom: 1px dashed var(--border-color);
+            padding-bottom: 10px;
+        }
+
+        .price-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .price-name {
+            font-weight: 500;
+            color: var(--text-primary);
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+        
+        .price-sub {
+            display: block;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin-top: 2px;
+        }
+
+        .price-value {
+            font-weight: 700;
+            color: var(--accent);
+            white-space: nowrap;
+            margin-left: 15px;
+            text-align: right;
+        }
+
+        .price-note {
+            font-size: 0.75em;
+            font-weight: normal;
+            display: block;
+            color: var(--text-secondary);
+        }
+
+        /* --- Contact Section CSS --- */
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .contact-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .contact-text {
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .social-icon {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background-color: var(--bg-secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-primary);
+            border: 1px solid var(--border-color);
+            transition: 0.3s;
+        }
+
+        .social-icon:hover {
+            color: var(--accent);
+            border-color: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        .contact-form {
+            background-color: var(--bg-secondary);
+            padding: 40px;
+            border-radius: 15px;
+            border: 1px solid var(--border-color);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .form-input, .form-textarea {
+            width: 100%;
+            padding: 12px;
+            background-color: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            color: var(--text-primary);
+            font-family: inherit;
+        }
+
+        .form-input:focus, .form-textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        .form-textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--bg-secondary);
+                flex-direction: column;
+                padding: 20px;
+                text-align: center;
+                border-bottom: 1px solid var(--border-color);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            
+            .hero-title span {
+                font-size: 2.5rem;
+            }
+
+            .about-grid, .contact-content {
+                grid-template-columns: 1fr;
+            }
+
+            .about-image {
+                max-width: 300px;
+                margin: 0 auto;
+            }
+
+            .masonry-grid {
+                column-count: 1;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">Orange House<span>.</span></a>
+            
+            <nav class="nav-links">
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#portfolio">Works</a>
+                <a href="#price">Price</a>
+                <a href="#contact">Contact</a>
+            </nav>
+
+            <div class="header-actions">
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
+                    <i data-lucide="moon" id="theme-icon"></i>
+                </button>
+                <button class="mobile-menu-btn" id="mobile-menu-btn">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero">
+            <div class="container hero-content fade-in">
+                <h1 class="hero-title">
+                    AIと感性で、<br>
+                    <span>想像を創造に。</span>
+                </h1>
+                <p class="hero-subtitle">
+                    画像制作、動画制作、BGM制作、ロゴ制作<br>
+                    50代から始める、大人のためのクリエイティブ＆AI活用術。<br>
+                    難しい専門用語は使わない個人・小規模店舗様に向けての<br>
+                    「今さら聞けないAI教室」を同世代の視点でサポートします。
+                </p>
+                <!-- Removed hero buttons as requested -->
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section">
+            <div class="container">
+                <h2 class="section-title fade-in">About Me<span class="sr-only">（Orange Houseについて）</span></h2>
+                <div class="about-grid">
+                    <div class="about-image fade-in">
+                        <!-- 【修正】ファイル名を英数字に変更 (profile.png) -->
+                        <img src="profile.png" alt="Orange House けいゆう プロフィールイラスト">
+                    </div>
+                    <div class="about-text fade-in">
+                        <h3>Artists Soul x AI Technology</h3>
+                        <p>初めまして。オレンジハウスけいゆうです。</p>
+                        <p>メインはギタリスト・作曲家として活動しています。50代半ばを迎え、時代に取り残されないようにとAIを勉強しました。</p>
+                        <p>私の強みは『アーティスト的感性』と『AI技術』の使い分けにあります。</p>
+                        <p>専門である音楽制作では、AIをアイデアの叩き台として活用しつつ、最終的なクオリティは自身の感性と技術で仕上げます。一方で、ロゴ・画像・動画制作においては、最新AIの進化をフルに活用し、スピーディーかつ高品質なアウトプットを実現します。</p>
+                        <p>アナログ時代の経験が長かったからこそ、使える時短テクニックが身に染みてます。<br>AI教室では初めての方に向けて、難しい専門用語を使わずサポートいたします。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section">
+            <div class="container">
+                <h2 class="section-title fade-in">Skills<span class="sr-only">（対応可能な制作・スキル）</span></h2>
+                <p class="section-subtitle fade-in">制作スタイルと講習活動</p>
+                
+                <div class="skills-grid">
+                    <!-- Category A -->
+                    <div class="skill-card fade-in">
+                        <div class="skill-info">
+                            <div class="skill-icon">
+                                <i data-lucide="music"></i>
+                            </div>
+                            <h3 class="skill-title">Music & Sound</h3>
+                            <p class="skill-description">Artist's Touch (Hybrid)</p>
+                        </div>
+                        <ul class="skill-list">
+                            <li>Composition & Guitar</li>
+                            <li>AI Music Gen: Suno AI (Idea Generation)</li>
+                            <li>DAW: Logic Pro (Recording, Mixing & Mastering)</li>
+                        </ul>
+                    </div>
+
+                    <!-- Category B -->
+                    <div class="skill-card fade-in">
+                        <div class="skill-info">
+                            <div class="skill-icon">
+                                <i data-lucide="video"></i>
+                            </div>
+                            <h3 class="skill-title">Visual & Movie</h3>
+                            <p class="skill-description">AI Powered Production</p>
+                        </div>
+                        <ul class="skill-list">
+                            <li>Image: Nano Banana, Gemini</li>
+                            <li>Video: Hailuo AI, Kling, Luma Dream Machine</li>
+                            <li>Creative: Logo, Banner, Movie Assets</li>
+                        </ul>
+                    </div>
+
+                    <!-- Category C -->
+                    <div class="skill-card fade-in">
+                        <div class="skill-info">
+                            <div class="skill-icon">
+                                <i data-lucide="presentation"></i>
+                            </div>
+                            <h3 class="skill-title">AI Education</h3>
+                            <p class="skill-description">Time Saving & Basics</p>
+                        </div>
+                        <ul class="skill-list">
+                            <li>Beginner Class: 今さら聞けないAIの基礎</li>
+                            <li>Work Efficiency: 時短テクニック講座</li>
+                            <li>Prompt Engineering basics</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Section -->
+        <section id="portfolio" class="section">
+            <div class="container">
+                <h2 class="section-title fade-in">Works & Projects<span class="sr-only">（制作実績・作品）</span></h2>
+                
+                <div class="portfolio-filter fade-in">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="movie">Movie</button>
+                    <button class="filter-btn" data-filter="music">Music</button>
+                    <button class="filter-btn" data-filter="image">Image</button>
+                </div>
+
+                <div class="masonry-grid fade-in">
+                    
+                    <!-- Item 1: Original Movie (Shorts) -->
+                    <div class="portfolio-item" data-category="movie">
+                        <div class="video-wrapper aspect-9-16">
+                            <iframe src="https://www.youtube.com/embed/vuod1_tM0Zw" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <div class="item-content">
+                            <span class="item-category">Movie (Shorts)</span>
+                            <h4 class="item-title">Original AI Movie 1</h4>
+                            <p style="font-size:0.9rem; color:var(--text-secondary);">
+                                リアルな猫たちがロックを演奏。<br>
+                                Tools: ImageFX, Hailuo AI, Canva, Suno AI
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Item 2: Original Song (Horizontal) -->
+                    <div class="portfolio-item" data-category="movie music">
+                        <div class="video-wrapper aspect-16-9">
+                            <iframe src="https://www.youtube.com/embed/6HuWX-avWFc" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <div class="item-content">
+                            <span class="item-category">Music & Movie</span>
+                            <h4 class="item-title">Original Song + Guitar</h4>
+                            <p style="font-size:0.9rem; color:var(--text-secondary);">
+                                作詞、作曲、ギター。今の国の空気や、社会の在り方に対して感じた違和感や不安を曲にしました。<br>
+                                Tools: Suno AI, Nano Banana, Pollo AI, Canva, Logic Pro, (Guitar: Stratocaster)
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Item 3: Tonosama Logo -->
+                    <div class="portfolio-item" data-category="image">
+                        <!-- 【修正】ファイル名を英数字に変更 (logo.jpg) -->
+                        <img src="logo.jpg" alt="殿様フロッグス ロゴデザイン" class="dummy-img" onerror="this.src='https://placehold.co/600x600/186A3B/FFFFFF?text=Logo+Design';">
+                        <div class="item-content">
+                            <span class="item-category">Image / Logo Design</span>
+                            <h4 class="item-title">Logo Design</h4>
+                            <p style="font-size:0.9rem; color:var(--text-secondary);">草野球チームのロゴデザイン。AIで生成したカエルのキャラクターをベースに、親しみやすさとインパクトを両立。</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 4: Original Movie (Shorts) -->
+                    <div class="portfolio-item" data-category="movie">
+                        <div class="video-wrapper aspect-9-16">
+                            <iframe src="https://www.youtube.com/embed/MP8DwQD1neA" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <div class="item-content">
+                            <span class="item-category">Movie (Shorts)</span>
+                            <h4 class="item-title">Original AI Movie 2</h4>
+                            <p style="font-size:0.9rem; color:var(--text-secondary);">
+                                折り紙で作られたようなイラストの猫がジャズを演奏。リアルな背景に馴染ませる<br>
+                                Tools: Nano Banana, Pollo AI, Canva, Suno AI
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Item 5: Relaxing BGM Demo (Audio Added) -->
+                    <div class="portfolio-item" data-category="music">
+                        <div style="background-color: var(--bg-primary); padding: 40px 20px; display:flex; align-items:center; justify-content:center;">
+                             <audio controls src="BGM.mp3" style="width: 100%;"></audio>
+                        </div>
+                        <div class="item-content">
+                            <span class="item-category">Music</span>
+                            <h4 class="item-title">Relaxing BGM Demo</h4>
+                            <p style="font-size:0.9rem; color:var(--text-secondary);">
+                                冷媒ガスの会社のHPのBGM。<br>
+                                曲が目立ちすぎることなく、画像と社風に合うよう作成。
+                            </p>
+                        </div>
+                    </div>
+
+                     <!-- Item 6: AI Art Piece -->
+                     <div class="portfolio-item" data-category="image">
+                        <div class="art-grid">
+                            <!-- 【修正】ファイル名を英数字に変更 (art1〜art4.jpg) -->
+                            <img src="art1.jpg" alt="Skeleton Saxophone AI Art">
+                            <img src="art2.jpg" alt="Crow Double Exposure AI Art">
+                            <img src="art3.jpg" alt="Dancing on the beach AI Art">
+                            <img src="art4.jpg" alt="Pop Art Illustration AI Art">
+                        </div>
+                        <div class="item-content">
+                            <span class="item-category">Image</span>
+                            <h4 class="item-title">AI Art Piece</h4>
+                            <p style="font-size:0.9rem; color:var(--text-secondary);">
+                                Tools: Midjourney
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Price Section -->
+        <section id="price" class="section">
+            <div class="container">
+                <h2 class="section-title fade-in">Price Plan<span class="sr-only">（制作料金表）</span></h2>
+                <p class="section-subtitle fade-in">制作料金の目安</p>
+
+                <div class="price-grid">
+                    <!-- Visual & Design -->
+                    <div class="price-card fade-in">
+                        <div class="price-icon"><i data-lucide="palette" style="width: 40px; height: 40px;"></i></div>
+                        <h3 class="price-category">Visual & Design</h3>
+                        <div class="price-list">
+                            <div class="price-item">
+                                <div class="price-name">画像制作</div>
+                                <div class="price-value">3,000円〜</div>
+                            </div>
+                            <div class="price-item">
+                                <div class="price-name">ロゴ作成</div>
+                                <div class="price-value">10,000円〜<span class="price-note">(要相談)</span></div>
+                            </div>
+                            <div class="price-item">
+                                <div class="price-name">チラシ制作<span class="price-sub">1ページ</span></div>
+                                <div class="price-value">15,000円〜<span class="price-note">(要相談)</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Movie -->
+                    <div class="price-card fade-in">
+                        <div class="price-icon"><i data-lucide="film" style="width: 40px; height: 40px;"></i></div>
+                        <h3 class="price-category">Movie</h3>
+                        <div class="price-list">
+                            <div class="price-item">
+                                <div class="price-name">動画制作<span class="price-sub">5〜10秒</span></div>
+                                <div class="price-value">5,000円〜</div>
+                            </div>
+                            <div class="price-item">
+                                <div class="price-name">動画制作<span class="price-sub">10秒以上</span></div>
+                                <div class="price-value">10,000円〜<span class="price-note">(要相談)</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Music -->
+                    <div class="price-card fade-in">
+                        <div class="price-icon"><i data-lucide="music" style="width: 40px; height: 40px;"></i></div>
+                        <h3 class="price-category">Music</h3>
+                        <p style="text-align:left; font-size:0.85rem; color:var(--text-secondary); margin-bottom:15px;">
+                            HP等のBGM作成（基本的に歌なし）
+                        </p>
+                        <div class="price-list">
+                            <div class="price-item">
+                                <div class="price-name">AI制作<span class="price-sub">150秒まで</span></div>
+                                <div class="price-value">10,000円〜</div>
+                            </div>
+                            <div class="price-item">
+                                <div class="price-name">AI ＋ ギター演奏<span class="price-sub">150秒まで</span></div>
+                                <div class="price-value">30,000円〜</div>
+                            </div>
+                             <div class="price-item">
+                                <div class="price-name">150秒以上</div>
+                                <div class="price-value" style="font-size:0.9rem; font-weight:normal; color:var(--text-primary);">要相談</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- AI Education -->
+                    <div class="price-card fade-in">
+                        <div class="price-icon"><i data-lucide="presentation" style="width: 40px; height: 40px;"></i></div>
+                        <h3 class="price-category">AI Education</h3>
+                        <p style="text-align:left; font-size:0.85rem; color:var(--text-secondary); margin-bottom:15px;">
+                            「今更聞けないAI教室」出張<br>
+                            （※どちらも交通費込み）
+                        </p>
+                        <div class="price-list">
+                            <div class="price-item">
+                                <div class="price-name">1時間</div>
+                                <div class="price-value">20,000円</div>
+                            </div>
+                            <div class="price-item">
+                                <div class="price-name">2時間<span class="price-sub">（休憩10分程度含む）</span></div>
+                                <div class="price-value">30,000円</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <div class="container">
+                <h2 class="section-title fade-in">Contact<span class="sr-only">（お問い合わせ）</span></h2>
+                <div class="contact-content fade-in">
+                    <div class="contact-info">
+                        <h3>お気軽にご相談ください</h3>
+                        <p class="contact-text">
+                            制作のご依頼、お見積り、「今更聞けないAI教室」についてなど、<br>
+                            お気軽にご連絡ください。<br>
+                            原則2日以内に返信いたします。
+                        </p>
+                    </div>
+
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <label class="form-label" for="name">お名前</label>
+                            <input type="text" id="name" class="form-input" placeholder="例：山田 太郎">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="email">メールアドレス</label>
+                            <input type="email" id="email" class="form-input" placeholder="example@gmail.com">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="subject">件名</label>
+                            <input type="text" id="subject" class="form-input" placeholder="制作のご依頼について">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="message">お問合せ内容</label>
+                            <textarea id="message" class="form-textarea" placeholder="ご相談内容をご記入ください"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">送信する</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Orange House. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JSON-LD Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Orange House",
+      "image": "logo.jpg",
+      "description": "AIを活用した画像・動画・BGM制作および、50代・初心者向けのAI教室。",
+      "priceRange": "¥3,000〜",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Japan", 
+        "addressCountry": "JP"
+      },
+      "url": "https://keiyuguitar-orangehouse.github.io/my-portfolio/"
+    }
+    </script>
+
+    <!-- Scripts -->
+    <script>
+        // --- Icon Initialization ---
+        lucide.createIcons();
+
+        // --- Theme Toggle Logic ---
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+        const body = document.body;
+
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'light') {
+            body.classList.add('light-mode');
+            themeIcon.setAttribute('data-lucide', 'sun');
+        }
+
+        themeToggleBtn.addEventListener('click', () => {
+            body.classList.toggle('light-mode');
+            const isLight = body.classList.contains('light-mode');
+            themeIcon.setAttribute('data-lucide', isLight ? 'sun' : 'moon');
+            lucide.createIcons();
+            localStorage.setItem('theme', isLight ? 'light' : 'dark');
+        });
+
+        // --- Mobile Menu ---
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // --- Scroll Animation ---
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // --- Portfolio Filtering ---
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const items = document.querySelectorAll('.portfolio-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filterValue = btn.getAttribute('data-filter');
+
+                items.forEach(item => {
+                    const categories = item.getAttribute('data-category');
+                    if (filterValue === 'all' || categories.includes(filterValue)) {
+                        item.style.display = 'block';
+                        item.style.opacity = '0';
+                        item.style.transform = 'translateY(20px)';
+                        setTimeout(() => {
+                            item.style.opacity = '1';
+                            item.style.transform = 'translateY(0)';
+                        }, 50);
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
