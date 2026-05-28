@@ -16,7 +16,7 @@
     <meta property="og:locale" content="ja_JP">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Orange House | AI Creative &amp; Education">
-    <meta name="twitter:description" content="想像を創造に。制作のご依頼やAI教室の詳細はこちら。">
+    <meta name="twitter:description" content="AIと感性で、想像を創造に。制作のご依頼やAI教室の詳細はこちら。">
     <meta name="twitter:image" content="logo.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -38,9 +38,9 @@
         .btn-primary:hover{background-color:transparent;color:var(--accent);box-shadow:0 0 15px var(--accent-glow)}
         .btn-outline{background-color:transparent;color:var(--accent)}
         .btn-outline:hover{background-color:var(--accent);color:#121212;box-shadow:0 0 15px var(--accent-glow)}
-        .section-title{font-size:2.5rem;text-align:center;margin-bottom:1rem;position:relative;display:inline-block;left:50%;transform:translateX(-50%)}
-        .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border-width:0}
+        .section-title{font-size:2.5rem;font-weight:700;text-align:center;margin-bottom:1rem;display:block;width:100%}
         .section-title::after{content:'';display:block;width:60px;height:4px;background-color:var(--accent);margin:10px auto 0;border-radius:2px}
+        .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border-width:0}
         .section-subtitle{text-align:center;color:var(--text-secondary);margin-bottom:3rem;font-size:1rem}
         header{position:fixed;top:0;width:100%;z-index:1000;background-color:var(--nav-bg);backdrop-filter:blur(10px);border-bottom:1px solid var(--border-color);padding:15px 0;transition:all 0.3s}
         .nav-container{display:flex;justify-content:space-between;align-items:center}
@@ -119,7 +119,19 @@
         .form-input,.form-textarea{width:100%;padding:12px;background-color:var(--bg-primary);border:1px solid var(--border-color);border-radius:5px;color:var(--text-primary);font-family:inherit}
         .form-input:focus,.form-textarea:focus{outline:none;border-color:var(--accent)}
         .form-textarea{height:150px;resize:vertical}
-        @media(max-width:768px){.nav-links{display:none;position:absolute;top:100%;left:0;width:100%;background-color:var(--bg-secondary);flex-direction:column;padding:20px;text-align:center;border-bottom:1px solid var(--border-color)}.nav-links.active{display:flex}.mobile-menu-btn{display:block}.hero-title{font-size:2.2rem}.hero-title span{font-size:2.5rem}.about-grid,.contact-content{grid-template-columns:1fr}.about-image{max-width:300px;margin:0 auto}.masonry-grid{column-count:1}.hero-buttons{flex-direction:column;align-items:center}.btn{width:100%;max-width:300px}}
+        @media(max-width:768px){
+            .nav-links{display:none;position:absolute;top:100%;left:0;width:100%;background-color:var(--bg-secondary);flex-direction:column;padding:20px;text-align:center;border-bottom:1px solid var(--border-color)}
+            .nav-links.active{display:flex}
+            .mobile-menu-btn{display:block}
+            .section-title{font-size:1.8rem}
+            .hero-title{font-size:2.2rem}
+            .hero-title span{font-size:2.5rem}
+            .about-grid,.contact-content{grid-template-columns:1fr}
+            .about-image{max-width:300px;margin:0 auto}
+            .masonry-grid{column-count:1}
+            .hero-buttons{flex-direction:column;align-items:center}
+            .btn{width:100%;max-width:300px}
+        }
         .fade-in{opacity:0;transform:translateY(30px);transition:opacity 0.8s ease-out,transform 0.8s ease-out}
         .fade-in.visible{opacity:1;transform:translateY(0)}
         footer{padding:30px 0;text-align:center;border-top:1px solid var(--border-color);color:var(--text-secondary);font-size:0.9rem}
@@ -148,8 +160,8 @@
         <section id="hero">
             <div class="container hero-content fade-in">
                 <h1 class="hero-title">
-                    想像を創造に。<br>
-                    <span></span>
+                    AIと感性で、<br>
+                    <span>想像を創造に。</span>
                 </h1>
                 <p class="hero-subtitle">
                     音楽制作・画像制作・動画制作・ロゴ制作、そして<br>
@@ -166,9 +178,10 @@
         <section id="about" class="section">
             <div class="container">
                 <h2 class="section-title fade-in">About Me<span class="sr-only">（Orange Houseについて）</span></h2>
+                <p class="section-subtitle fade-in"></p>
                 <div class="about-grid">
                     <div class="about-image fade-in">
-                        <img src="https://placehold.co/400x500/FF6D00/FFFFFF?text=Profile+Image" alt="Orange House けいゆう プロフィールイラスト" loading="lazy">
+                        <img src="profile.png" alt="Orange House けいゆう プロフィール画像" loading="lazy">
                     </div>
                     <div class="about-text fade-in">
                         <h3>Artists Soul x AI Technology</h3>
@@ -248,7 +261,7 @@
                         <div class="item-content"><span class="item-category">Music &amp; Movie</span><h4 class="item-title">Original Song + Guitar</h4><p style="font-size:0.9rem;color:var(--text-secondary)">作詞、作曲、ギター。今の国の空気や、社会の在り方に対して感じた違和感や不安を曲にしました。<br>Tools: Suno AI, Nano Banana, Pollo AI, Canva, Logic Pro, (Guitar: Stratocaster)</p></div>
                     </div>
                     <div class="portfolio-item" data-category="image">
-                        <img src="https://placehold.co/600x600/186A3B/FFFFFF?text=Logo+Design" alt="殿様フロッグス ロゴデザイン" class="dummy-img" loading="lazy">
+                        <img src="logo.jpg" alt="殿様フロッグス ロゴデザイン" class="dummy-img" loading="lazy">
                         <div class="item-content"><span class="item-category">Image / Logo Design</span><h4 class="item-title">Logo Design</h4><p style="font-size:0.9rem;color:var(--text-secondary)">草野球チームのロゴデザイン。AIで生成したカエルのキャラクターをベースに、親しみやすさとインパクトを両立。</p></div>
                     </div>
                     <div class="portfolio-item" data-category="movie">
@@ -256,15 +269,17 @@
                         <div class="item-content"><span class="item-category">Movie (Shorts)</span><h4 class="item-title">Original AI Movie 2</h4><p style="font-size:0.9rem;color:var(--text-secondary)">折り紙で作られたようなイラストの猫がジャズを演奏。リアルな背景に馴染ませる<br>Tools: Nano Banana, Pollo AI, Canva, Suno AI</p></div>
                     </div>
                     <div class="portfolio-item" data-category="music">
-                        <div style="background-color:var(--bg-primary);padding:40px 20px;display:flex;align-items:center;justify-content:center"><audio controls style="width:100%"></audio></div>
+                        <div style="background-color:var(--bg-primary);padding:40px 20px;display:flex;align-items:center;justify-content:center">
+                            <audio controls style="width:100%"><source src="BGM.mp3" type="audio/mpeg">お使いのブラウザは audio タグに対応していません。</audio>
+                        </div>
                         <div class="item-content"><span class="item-category">Music</span><h4 class="item-title">Relaxing BGM Demo</h4><p style="font-size:0.9rem;color:var(--text-secondary)">冷媒ガスの会社のHPのBGM。<br>曲が目立ちすぎることなく、画像と社風に合うよう作成。</p></div>
                     </div>
                     <div class="portfolio-item" data-category="image">
                         <div class="art-grid">
-                            <img src="https://placehold.co/400x400/2D1B0E/FF6D00?text=Art+1" alt="Skeleton Saxophone AI Art" loading="lazy">
-                            <img src="https://placehold.co/400x400/2D1B0E/FF6D00?text=Art+2" alt="Crow Double Exposure AI Art" loading="lazy">
-                            <img src="https://placehold.co/400x400/2D1B0E/FF6D00?text=Art+3" alt="Dancing on the beach AI Art" loading="lazy">
-                            <img src="https://placehold.co/400x400/2D1B0E/FF6D00?text=Art+4" alt="Pop Art Illustration AI Art" loading="lazy">
+                            <img src="art1.jpg" alt="AI Art 1" loading="lazy">
+                            <img src="art2.jpg" alt="AI Art 2" loading="lazy">
+                            <img src="art3.jpg" alt="AI Art 3" loading="lazy">
+                            <img src="art4.jpg" alt="AI Art 4" loading="lazy">
                         </div>
                         <div class="item-content"><span class="item-category">Image</span><h4 class="item-title">AI Art Piece</h4><p style="font-size:0.9rem;color:var(--text-secondary)">Tools: Midjourney</p></div>
                     </div>
@@ -289,7 +304,7 @@
                         <div class="price-icon"><i data-lucide="film" style="width:40px;height:40px"></i></div>
                         <h3 class="price-category">Movie</h3>
                         <div class="price-list">
-                            <div class="price-item"><div class="price-name">AI動画制作<span class="price-sub">15秒まで</span></div><div class="price-value">5,000円〜<span class="price-note">(要相談)</span></div></div>
+                            <div class="price-item"><div class="price-name">AI動画制作<span class="price-sub">15秒まで</span></div><div class="price-value">5,000円〜</div></div>
                             <div class="price-item"><div class="price-name">AI動画制作<span class="price-sub">15秒以上</span></div><div class="price-value">10,000円〜<span class="price-note">(要相談)</span></div></div>
                             <div class="price-item"><div class="price-name">動画編集</div><div class="price-value">要相談</div></div>
                         </div>
@@ -299,15 +314,15 @@
                         <h3 class="price-category">Music</h3>
                         <p style="text-align:left;font-size:0.85rem;color:var(--text-secondary);margin-bottom:15px">HP等のBGM作成（基本的に歌なし）</p>
                         <div class="price-list">
-                            <div class="price-item"><div class="price-name">AI制作<span class="price-sub">180秒まで</span></div><div class="price-value">5,000円〜</div></div>
-                            <div class="price-item"><div class="price-name">AI ＋ ギター演奏<span class="price-sub">180秒まで</span></div><div class="price-value">30,000円〜</div></div>
-                            <div class="price-item"><div class="price-name">180秒以上</div><div class="price-value">要相談</div></div>
+                            <div class="price-item"><div class="price-name">AI制作<span class="price-sub">150秒まで</span></div><div class="price-value">10,000円〜</div></div>
+                            <div class="price-item"><div class="price-name">AI ＋ ギター演奏<span class="price-sub">150秒まで</span></div><div class="price-value">30,000円〜</div></div>
+                            <div class="price-item"><div class="price-name">150秒以上</div><div class="price-value">要相談</div></div>
                         </div>
                     </div>
                     <div class="price-card fade-in">
                         <div class="price-icon"><i data-lucide="presentation" style="width:40px;height:40px"></i></div>
                         <h3 class="price-category">AI Education</h3>
-                        <p style="text-align:left;font-size:0.85rem;color:var(--text-secondary);margin-bottom:15px">「今更聞けないAI教室」出張<br>（※品川区在住。遠方は交通費を頂きます）</p>
+                        <p style="text-align:left;font-size:0.85rem;color:var(--text-secondary);margin-bottom:15px">「今更聞けないAI教室」出張<br>（※品川区在住。どちらも交通費込み）</p>
                         <div class="price-list">
                             <div class="price-item"><div class="price-name">2時間<span class="price-sub">（休憩10分程度含む）</span></div><div class="price-value">30,000円</div></div>
                         </div>
